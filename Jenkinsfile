@@ -33,8 +33,7 @@ pipeline {
         stage('Create-CFT') {
             sh 'aws cloudformation create-stack --stack-name myteststack \\
                 --template-body ./sampletemplate.json \\
-                --parameters ParameterKey=KeyPairName,ParameterValue=TestKey \\
-                    ParameterKey=SubnetIDs,ParameterValue=SubnetID1\\,SubnetID2'
+                --parameters ParameterKey=KeyPairName,ParameterValue=TestKey ParameterKey=SubnetIDs,ParameterValue=SubnetID1,SubnetID2'
         }
     }
 }
